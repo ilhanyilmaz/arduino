@@ -1,8 +1,8 @@
 
 // These constants won't change.  They're used to give names
 // to the pins used:
-const int analogInPin = A4;  // Analog input pin that the potentiometer is attached to
-const int analogInPin2 = A5;  // Analog input pin that the potentiometer is attached to
+const int analogInPin = 8;  // Analog input pin that the potentiometer is attached to
+const int analogInPin2 = 9;  // Analog input pin that the potentiometer is attached to
 
 int sensorValue = 0;        // value read from the pot
 int sensorValue2 = 0;        // value read from the pot
@@ -16,8 +16,8 @@ int value2 =0;
 int cycle = 0;
 void loop() {
   // read the analog in value:
-  sensorValue = analogRead(analogInPin);            
-  sensorValue2 = analogRead(analogInPin2);            
+  sensorValue = digitalRead(analogInPin);            
+  sensorValue2 = digitalRead(analogInPin2);            
   // map it to the range of the analog out:
 
 
