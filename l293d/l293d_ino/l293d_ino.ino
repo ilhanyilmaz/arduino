@@ -1,12 +1,12 @@
 
-int pot1Pin = A2;    // select the input pin for the potentiometer
-int pot2Pin = A3;    // select the input pin for the potentiometer
+int pot1Pin = A1;    // select the input pin for the potentiometer
+int pot2Pin = A2;    // select the input pin for the potentiometer
 int pot1Target=600;
 int pot2Target=600;
 int motorA1Pin = 5;
 int motorA2Pin = 6;
-int motorB1Pin = 9;
-int motorB2Pin = 10;
+int motorB1Pin = 10;
+int motorB2Pin = 11;
 int interval = 5;
 String message; //string that stores the incoming message
 char data;
@@ -20,7 +20,7 @@ char data;
 void setup() {
   // declare the ledPin as an OUTPUT:
   Serial.begin(9600);
-  Serial.println("test");
+//  Serial.println("test");
   Serial.print("AT+NAMEQozmoNode");
   pinMode(motorA1Pin, OUTPUT);
   pinMode(motorA2Pin, OUTPUT);
@@ -45,8 +45,8 @@ void servoActions() {
         digitalWrite(motorA1Pin,LOW);
         digitalWrite(motorA2Pin,LOW);
   }
-  Serial.println(sensorValue, DEC);
-/*  sensorValue = analogRead(pot2Pin);
+//  Serial.println(sensorValue, DEC);
+  sensorValue = analogRead(pot2Pin);
   diff = pot2Target - sensorValue;
   if(abs(diff) > interval) {
     if(sensorValue > pot2Target) {
@@ -61,7 +61,7 @@ void servoActions() {
   else {
         digitalWrite(motorB1Pin,LOW);
         digitalWrite(motorB2Pin,LOW);
-  }*/
+  }
 }
 
 int translateAngle(int angle) {
